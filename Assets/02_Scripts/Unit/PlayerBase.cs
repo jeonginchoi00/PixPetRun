@@ -14,6 +14,7 @@ public class PlayerBase : MonoBehaviour
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    #region override
     public virtual void Update()
     {
         Move();
@@ -29,7 +30,6 @@ public class PlayerBase : MonoBehaviour
         }
     }
 
-    #region override
     public virtual void Move()
     {
         if (Input.GetButton(InputType.HORIZONTAL))

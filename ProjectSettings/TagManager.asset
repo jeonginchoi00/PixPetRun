@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - GROUND
+  - PLAYER
   layers:
   - Default
   - TransparentFX

@@ -25,5 +25,6 @@ namespace Globals
     public static class Tag
     {
         public const string GROUND = "GROUND";
+        public const string PLAYER = "PLAYER";
     }
 }
