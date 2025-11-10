@@ -26,5 +26,6 @@ namespace Globals
     {
         public const string GROUND = "GROUND";
         public const string PLAYER = "PLAYER";
+        public const string POINT = "POINT";
     }
 }

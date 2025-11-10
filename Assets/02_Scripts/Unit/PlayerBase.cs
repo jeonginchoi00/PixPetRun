@@ -23,10 +23,18 @@ public class PlayerBase : MonoBehaviour
 
     public virtual void OnCollisionEnter2D(Collision2D _collision)
     {
-        if (_collision.transform.CompareTag(Tag.GROUND))
+        if (_collision.transform.CompareTag(Tag.GROUND) || _collision.transform.CompareTag(Tag.POINT))
         {
             m_isGround = true;
             m_animator.SetTrigger(AnimKey.GROUND);
+        }
+
+        if (_collision.transform.CompareTag(Tag.POINT))
+        {
+            if (GameManager.GetInstance().ItemCount == 0)
+            {
+                GameManager.GetInstance().SetGameState(GameState.GAME_CLEAR);
+            }
         }
     }
 
