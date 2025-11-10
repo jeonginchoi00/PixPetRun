@@ -8,6 +8,8 @@ public class PlayerBase : MonoBehaviour
     private float m_speed = 2f;
     private bool m_isGround = true;
 
+    public float Speed { get => m_speed; set => m_speed = value; }
+
     private void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -23,7 +25,7 @@ public class PlayerBase : MonoBehaviour
 
     public virtual void OnCollisionEnter2D(Collision2D _collision)
     {
-        if (_collision.transform.CompareTag(Tag.GROUND) || _collision.transform.CompareTag(Tag.POINT))
+        if (_collision.transform.CompareTag(Tag.GROUND) || _collision.transform.CompareTag(Tag.POINT) || _collision.transform.CompareTag(Tag.ICEGROUND))
         {
             m_isGround = true;
             m_animator.SetTrigger(AnimKey.GROUND);
@@ -35,6 +37,14 @@ public class PlayerBase : MonoBehaviour
             {
                 GameManager.GetInstance().SetGameState(GameState.GAME_CLEAR);
             }
+        }
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D _collision)
+    {
+        if (_collision.transform.CompareTag(Tag.ENEMY))
+        {
+            GameManager.GetInstance().SetGameState(GameState.GAME_END);
         }
     }
 
