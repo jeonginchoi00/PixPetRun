@@ -33,7 +33,7 @@ public class PlayerBase : MonoBehaviour
         {
             if (GameManager.GetInstance().ItemCount == 0)
             {
-                LoadSceneManager.GetInstance().LoadNextStage();
+                GameManager.GetInstance().SetGameState(GameState.GAME_CLEAR);
             }
         }
     }

@@ -1,6 +1,15 @@
 
 namespace Globals
 {
+    #region Game
+    public enum GameState
+    {
+        GAME_START = 0,
+        GAME_CLEAR = 1,
+        GAME_END = 2
+    }
+    #endregion
+
     #region UI
     public enum PageType
     {
@@ -10,6 +19,7 @@ namespace Globals
         START = 100,
 
         // Stage
+        STAGE = 200,
 
         // End
     }

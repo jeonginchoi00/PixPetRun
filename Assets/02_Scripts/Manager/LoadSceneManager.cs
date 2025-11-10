@@ -6,7 +6,7 @@ public class LoadSceneManager : MonoBehaviour
     private static LoadSceneManager m_instance;
     public static LoadSceneManager GetInstance() => m_instance;
 
-    private void Start()
+    private void Awake()
     {
         if (m_instance == null)
         {

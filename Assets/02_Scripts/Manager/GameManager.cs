@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Globals;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,21 +8,53 @@ public class GameManager : MonoBehaviour
     public static GameManager GetInstance() => m_instance;
 
     private List<Item> m_itemList = new List<Item>();
+    private float m_timer = 0f;
+
     public int ItemCount => m_itemList.Count;
+    public float Score => m_timer;
+    public GameState CurrentState { get; private set; } = GameState.GAME_START;
+
 
     private void Awake()
     {
         if (m_instance == null)
         {
             m_instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
-    private void OnDestroy()
+    private void Start()
     {
-        if (m_instance == this)
+        SetGameState(GameState.GAME_START);
+    }
+
+    private void Update()
+    {
+        if (CurrentState == GameState.GAME_START)
         {
-            m_instance = null;
+            m_timer += Time.deltaTime;
+        }
+    }
+
+    public void SetGameState(GameState _state)
+    {
+        CurrentState = _state;
+
+        switch (_state)
+        {
+            case GameState.GAME_START:
+                m_timer = 0f;
+                break;
+            case GameState.GAME_CLEAR:
+                LoadSceneManager.GetInstance().LoadNextStage();
+                break;
+            case GameState.GAME_END:
+                break;
         }
     }
 
