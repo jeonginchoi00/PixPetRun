@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
                 LoadSceneManager.GetInstance().LoadNextStage();
                 break;
             case GameState.GAME_END:
+                Debug.Log("GAME OVER!");
                 break;
         }
     }
