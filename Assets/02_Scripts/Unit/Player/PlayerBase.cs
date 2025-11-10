@@ -8,8 +8,6 @@ public class PlayerBase : MonoBehaviour
     private float m_speed = 2f;
     private bool m_isGround = true;
 
-    public float Speed { get => m_speed; set => m_speed = value; }
-
     private void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -25,7 +23,10 @@ public class PlayerBase : MonoBehaviour
 
     public virtual void OnCollisionEnter2D(Collision2D _collision)
     {
-        if (_collision.transform.CompareTag(Tag.GROUND) || _collision.transform.CompareTag(Tag.POINT) || _collision.transform.CompareTag(Tag.ICEGROUND))
+        if (_collision.transform.CompareTag(Tag.GROUND)
+            || _collision.transform.CompareTag(Tag.POINT)
+            || _collision.transform.CompareTag(Tag.ICEGROUND)
+            || _collision.transform.CompareTag(Tag.DIRTGROUND))
         {
             m_isGround = true;
             m_animator.SetTrigger(AnimKey.GROUND);
@@ -37,6 +38,30 @@ public class PlayerBase : MonoBehaviour
             {
                 GameManager.GetInstance().SetGameState(GameState.GAME_CLEAR);
             }
+        }
+
+        if (_collision.transform.CompareTag(Tag.ICEGROUND))
+        {
+            m_speed = 5f;
+        }
+
+        if (_collision.transform.CompareTag(Tag.DIRTGROUND))
+        {
+            m_speed = 0.5f;
+        }
+
+        if (_collision.transform.CompareTag(Tag.TRAMPOLINE))
+        {
+            m_rigidbody.AddForce(Vector2.up * 600);
+        }
+    }
+
+    public virtual void OnCollisionExit2D(Collision2D _collision)
+    {
+        if (_collision.transform.CompareTag(Tag.ICEGROUND)
+            || _collision.transform.CompareTag(Tag.DIRTGROUND))
+        {
+            m_speed = 2f;
         }
     }
 

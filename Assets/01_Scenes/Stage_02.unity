@@ -1114,7 +1114,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2116008277}
   - {fileID: 1134980450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1366,6 +1365,7 @@ Transform:
   - {fileID: 2024416528}
   - {fileID: 1247270176}
   - {fileID: 1962465005}
+  - {fileID: 2116008277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791944614
@@ -3635,7 +3635,7 @@ GameObject:
   - component: {fileID: 1368436184}
   m_Layer: 0
   m_Name: StageBox
-  m_TagString: Untagged
+  m_TagString: GROUND
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6036,7 +6036,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 672147540}
+  m_Father: {fileID: 770963103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2116008278
 MonoBehaviour:
