@@ -28,4 +28,14 @@ public class LoadSceneManager : MonoBehaviour
 
         SceneManager.LoadScene(_scene);
     }
+
+    public void LoadNextStage()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        string currentStage = currentScene.Substring(currentScene.Length - 2);
+        int nextStage = int.Parse(currentStage) + 1;
+        string nextScene = $"Stage_{nextStage:D2}";
+
+        SceneManager.LoadScene(nextScene);
+    }
 }

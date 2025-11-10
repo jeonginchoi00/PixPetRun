@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GROUND
   - PLAYER
+  - POINT
   layers:
   - Default
   - TransparentFX
