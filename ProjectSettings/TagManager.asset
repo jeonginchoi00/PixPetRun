@@ -9,6 +9,8 @@ TagManager:
   - POINT
   - ICEGROUND
   - ENEMY
+  - DIRTGROUND
+  - TRAMPOLINE
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using Globals;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,5 +38,11 @@ public class LoadSceneManager : MonoBehaviour
         string nextScene = $"Stage_{nextStage:D2}";
 
         SceneManager.LoadScene(nextScene);
+    }
+
+    public void ReLoadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.GetInstance().SetGameState(GameState.GAME_START);
     }
 }

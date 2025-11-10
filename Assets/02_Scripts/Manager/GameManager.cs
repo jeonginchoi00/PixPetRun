@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Globals;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,13 +49,13 @@ public class GameManager : MonoBehaviour
         switch (_state)
         {
             case GameState.GAME_START:
-                m_timer = 0f;
+                m_itemList.Clear();
                 break;
             case GameState.GAME_CLEAR:
                 LoadSceneManager.GetInstance().LoadNextStage();
                 break;
             case GameState.GAME_END:
-                Debug.Log("GAME OVER!");
+                LoadSceneManager.GetInstance().ReLoadScene();
                 break;
         }
     }
