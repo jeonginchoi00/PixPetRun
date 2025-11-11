@@ -36,6 +36,7 @@ public class Page_Start : PageTemplate
 
     private void OnClickStartBtn()
     {
+        SoundManager.GetInstance().PlaySFX(SoundType.SFX_SELECTED);
         LoadSceneManager.GetInstance().LoadScene(SceneName.STAGE_01);
     }
 

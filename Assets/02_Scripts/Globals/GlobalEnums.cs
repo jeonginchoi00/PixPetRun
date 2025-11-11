@@ -33,4 +33,16 @@ namespace Globals
 
     }
     #endregion
+
+    #region SOUND
+    public enum SoundType
+    {
+        // BGM
+        BGM = 100,
+
+        // SFX
+        SFX_COLLECTED = 200,
+        SFX_SELECTED = 201
+    }
+    #endregion
 }
