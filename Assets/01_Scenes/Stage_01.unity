@@ -5478,6 +5478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Page_Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 4285846494838328524, guid: 404953d51c9fabf4bac778788daec851, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

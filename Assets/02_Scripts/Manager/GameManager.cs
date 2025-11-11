@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GameUIManager.GetInstance().Initialize();
         SetGameState(GameState.GAME_START);
     }
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         switch (_state)
         {
             case GameState.GAME_START:
+                GameUIManager.GetInstance().Initialize();
                 m_itemList.Clear();
                 break;
             case GameState.GAME_CLEAR:
@@ -57,7 +59,14 @@ public class GameManager : MonoBehaviour
             case GameState.GAME_END:
                 LoadSceneManager.GetInstance().ReLoadScene();
                 break;
+            case GameState.GAME_ALLCLEAR:
+                break;
         }
+    }
+
+    public void ResetTimer()
+    {
+        m_timer = 0;
     }
 
     #region Item

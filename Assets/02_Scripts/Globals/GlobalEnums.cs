@@ -23,6 +23,7 @@ namespace Globals
         STAGE = 200,
 
         // End
+        END = 300
     }
 
     public enum PopupType
