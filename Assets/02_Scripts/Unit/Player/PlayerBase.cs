@@ -54,6 +54,13 @@ public class PlayerBase : MonoBehaviour
         {
             m_rigidbody.AddForce(Vector2.up * 600);
         }
+
+        if (_collision.transform.CompareTag(Tag.HITBOX))
+        {
+            EnemyBase enemy = _collision.transform.GetComponentInParent<EnemyBase>();
+
+            enemy.SetHitCount();
+        }
     }
 
     public virtual void OnCollisionExit2D(Collision2D _collision)
@@ -67,6 +74,11 @@ public class PlayerBase : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D _collision)
     {
+        if (_collision.transform.CompareTag(Tag.TRAP))
+        {
+            GameManager.GetInstance().SetGameState(GameState.GAME_END);
+        }
+
         if (_collision.transform.CompareTag(Tag.ENEMY))
         {
             GameManager.GetInstance().SetGameState(GameState.GAME_END);

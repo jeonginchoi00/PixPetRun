@@ -5941,7 +5941,7 @@ GameObject:
   - component: {fileID: 2116008279}
   m_Layer: 0
   m_Name: Trap_Saw
-  m_TagString: ENEMY
+  m_TagString: TRAP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
