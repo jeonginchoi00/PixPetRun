@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentState != GameState.GAME_END)
+        if (CurrentState != GameState.GAME_ALLCLEAR)
         {
             m_timer += Time.deltaTime;
         }

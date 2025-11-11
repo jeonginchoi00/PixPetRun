@@ -37,7 +37,15 @@ public class LoadSceneManager : MonoBehaviour
         int nextStage = int.Parse(currentStage) + 1;
         string nextScene = $"Stage_{nextStage:D2}";
 
-        SceneManager.LoadScene(nextScene);
+        if (nextStage == 4)
+        {
+            SceneManager.LoadScene(SceneName.END);
+            GameManager.GetInstance().SetGameState(GameState.GAME_ALLCLEAR);
+        }
+        else
+        {
+            SceneManager.LoadScene(nextScene);
+        }
     }
 
     public void ReLoadScene()

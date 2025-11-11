@@ -6,7 +6,8 @@ namespace Globals
     {
         GAME_START = 0,
         GAME_CLEAR = 1,
-        GAME_END = 2
+        GAME_END = 2,
+        GAME_ALLCLEAR = 3
     }
     #endregion
 
