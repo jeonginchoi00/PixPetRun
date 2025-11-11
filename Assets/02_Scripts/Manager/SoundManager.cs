@@ -5,7 +5,7 @@ public class SoundManager : MonoBehaviour
     private static SoundManager m_instance;
     public static SoundManager GetInstance() => m_instance;
 
-    private void Start()
+    private void Awake()
     {
         if (m_instance == null)
         {

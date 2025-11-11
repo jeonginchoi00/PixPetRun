@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class StartManager : MonoBehaviour
+public class EndManager : MonoBehaviour
 {
-    private static StartManager m_instance;
-    public static StartManager GetInstance() => m_instance;
+    private static EndManager m_instance;
+    public static EndManager GetInstance() => m_instance;
 
     private void Awake()
     {
@@ -12,7 +12,7 @@ public class StartManager : MonoBehaviour
             m_instance = this;
         }
 
-        StartUIManager.GetInstance().Initialize();
+        EndUIManager.GetInstance().Initialize();
     }
 
     private void OnDestroy()

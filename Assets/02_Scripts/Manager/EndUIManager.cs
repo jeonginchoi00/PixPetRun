@@ -3,10 +3,10 @@ using Globals;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameUIManager : MonoBehaviour
+public class EndUIManager : MonoBehaviour
 {
-    private static GameUIManager m_instance;
-    public static GameUIManager GetInstance() => m_instance;
+    private static EndUIManager m_instance;
+    public static EndUIManager GetInstance() => m_instance;
 
     private PageType m_currentPage;
     private PopupType m_currentPopup;
@@ -19,11 +19,14 @@ public class GameUIManager : MonoBehaviour
         if (m_instance == null)
         {
             m_instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else
+    }
+
+    private void OnDestroy()
+    {
+        if (m_instance == this)
         {
-            Destroy(gameObject);
+            m_instance = null;
         }
     }
 
@@ -35,7 +38,7 @@ public class GameUIManager : MonoBehaviour
             m_pageTemplates[page.Key].Initialize();
         }
 
-        SetCurrentPage(PageType.STAGE);
+        SetCurrentPage(PageType.END);
 
         // ÆË¾÷ ÃÊ±âÈ­
         foreach (KeyValuePair<PopupType, PopupTemplate> popup in m_popupTemplates)

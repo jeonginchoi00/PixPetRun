@@ -14,7 +14,7 @@ public class StartUIManager : MonoBehaviour
     [SerializeField] private SerializedDictionary<PageType, PageTemplate> m_pageTemplates;
     [SerializeField] private SerializedDictionary<PopupType, PopupTemplate> m_popupTemplates;
 
-    private void Start()
+    private void Awake()
     {
         if (m_instance == null)
         {
