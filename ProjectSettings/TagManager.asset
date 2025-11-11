@@ -8,9 +8,11 @@ TagManager:
   - PLAYER
   - POINT
   - ICEGROUND
-  - ENEMY
   - DIRTGROUND
   - TRAMPOLINE
+  - TRAP
+  - ENEMY
+  - HITBOX
   layers:
   - Default
   - TransparentFX

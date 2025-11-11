@@ -21,6 +21,7 @@ namespace Globals
         public const string JUMP = "Jump";
         public const string GROUND = "Ground";
         public const string TRAMJUMP = "TramJump";
+        public const string HIT = "Hit";
     }
 
     public static class Tag
@@ -29,8 +30,10 @@ namespace Globals
         public const string PLAYER = "PLAYER";
         public const string POINT = "POINT";
         public const string ICEGROUND = "ICEGROUND";
-        public const string ENEMY = "ENEMY";
+        public const string TRAP = "TRAP";
         public const string DIRTGROUND = "DIRTGROUND";
         public const string TRAMPOLINE = "TRAMPOLINE";
+        public const string ENEMY = "ENEMY";
+        public const string HITBOX = "HITBOX";
     }
 }
