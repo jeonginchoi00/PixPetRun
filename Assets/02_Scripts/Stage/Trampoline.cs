@@ -14,6 +14,7 @@ public class Trampoline : MonoBehaviour
     {
         if (_collision.transform.CompareTag(Tag.PLAYER))
         {
+            SoundManager.GetInstance().PlaySFX(SoundType.SFX_SPRING);
             m_animator.SetTrigger(AnimKey.TRAMJUMP);
         }
     }

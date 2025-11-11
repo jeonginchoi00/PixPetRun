@@ -36,6 +36,7 @@ public class PlayerBase : MonoBehaviour
         {
             if (GameManager.GetInstance().ItemCount == 0)
             {
+                SoundManager.GetInstance().PlaySFX(SoundType.SFX_CLEAR);
                 GameManager.GetInstance().SetGameState(GameState.GAME_CLEAR);
             }
         }
@@ -57,6 +58,7 @@ public class PlayerBase : MonoBehaviour
 
         if (_collision.transform.CompareTag(Tag.HITBOX))
         {
+            SoundManager.GetInstance().PlaySFX(SoundType.SFX_HIT);
             EnemyBase enemy = _collision.transform.GetComponentInParent<EnemyBase>();
 
             enemy.SetHitCount();
@@ -76,11 +78,13 @@ public class PlayerBase : MonoBehaviour
     {
         if (_collision.transform.CompareTag(Tag.TRAP))
         {
+            SoundManager.GetInstance().PlaySFX(SoundType.SFX_GAMEOVER);
             GameManager.GetInstance().SetGameState(GameState.GAME_END);
         }
 
         if (_collision.transform.CompareTag(Tag.ENEMY))
         {
+            SoundManager.GetInstance().PlaySFX(SoundType.SFX_GAMEOVER);
             GameManager.GetInstance().SetGameState(GameState.GAME_END);
         }
     }
@@ -110,6 +114,7 @@ public class PlayerBase : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && m_isGround)
         {
+            SoundManager.GetInstance().PlaySFX(SoundType.SFX_JUMP);
             m_rigidbody.AddForce(Vector2.up * 300);
             m_animator.SetTrigger(AnimKey.JUMP);
             m_isGround = false;

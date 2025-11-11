@@ -32,6 +32,7 @@ public class Page_End : PageTemplate
 
     private void OnClickRestartBtn()
     {
+        SoundManager.GetInstance().PlaySFX(SoundType.SFX_CLICK);
         GameManager.GetInstance().SetGameState(GameState.GAME_START);
         GameManager.GetInstance().ResetTimer();
         LoadSceneManager.GetInstance().LoadScene(SceneName.STAGE_01);

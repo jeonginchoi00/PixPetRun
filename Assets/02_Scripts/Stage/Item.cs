@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
     {
         if (_collision.transform.CompareTag(Tag.PLAYER))
         {
+            SoundManager.GetInstance().PlaySFX(SoundType.SFX_COLLECTED);
             GameManager.GetInstance().UnRegisterItem(this);
             GameObject effect = Instantiate(m_collectedEffect, transform.position, Quaternion.identity);
             Destroy(effect, 0.5f);
