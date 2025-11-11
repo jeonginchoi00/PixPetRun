@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7cc4b4c28e7e0746b9d0a14e5e40952
+guid: 438ff0eb1a9b4e0489f9f36560bdfcd4
 AudioImporter:
   externalObjects: {}
   serializedVersion: 8
@@ -21,10 +21,3 @@ AudioImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 320299
-  packageName: UI Sfx 8-Bit Pack
-  packageVersion: 1.0
-  assetPath: Assets/UI Sfx 8-Bit Pack/Audio/Pack 1/Menu.wav
-  uploadId: 767335

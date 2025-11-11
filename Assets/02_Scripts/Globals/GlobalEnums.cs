@@ -42,7 +42,12 @@ namespace Globals
 
         // SFX
         SFX_COLLECTED = 200,
-        SFX_SELECTED = 201
+        SFX_CLICK = 201,
+        SFX_JUMP = 202,
+        SFX_CLEAR = 203,
+        SFX_GAMEOVER = 204,
+        SFX_HIT = 205,
+        SFX_SPRING = 206
     }
     #endregion
 }
